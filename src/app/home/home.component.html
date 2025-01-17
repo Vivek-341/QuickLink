@@ -1,1 +1,10 @@
-<h1>Hello This is Home</h1>
+<ng-container *ngIf="userProfile">
+  <div>Username: {{ userProfile.given_name}}&nbsp;{{ userProfile.family_name }}</div>
+  <div>Email: {{ userProfile.email }}</div>
+  <img src="{{userProfile.picture}}" alt="ERROR!!!">
+  <div>User ID: {{ userProfile.sub }}</div>
+  <div>Gender: {{ userProfile.gender }}</div>
+  <div>Phone: {{ userProfile.phone_number }}</div>
+</ng-container>
+
+<button (click)="logout()">Logout</button>
