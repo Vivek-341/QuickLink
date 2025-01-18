@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.navbar span {
+  margin-left: auto;
+  margin-right: 1rem;
+}

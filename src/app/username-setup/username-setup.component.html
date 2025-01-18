@@ -1,0 +1,21 @@
+<div class="username-setup">
+  <h2>Set Your Username</h2>
+  
+  <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input 
+        type="text" 
+        id="username" 
+        formControlName="username" 
+        placeholder="Enter username">
+      
+      <div class="error" *ngIf="usernameForm.get('username')?.errors?.['pattern'] && usernameForm.get('username')?.touched">
+        Username must be 6-20 characters and can only contain letters, numbers, and special characters
+      </div>
+    </div>
+
+    <button type="button" (click)="generateUsername()">Generate New Username</button>
+    <button type="submit" [disabled]="!usernameForm.valid">Continue</button>
+  </form>
+</div>

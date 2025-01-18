@@ -1,7 +1,13 @@
-<div>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/login" >Login</a>
-    <a routerLink="/register" >Register</a>
+<div class="navbar">
+  <a routerLink="/home">Home</a>
+  
+  <ng-container *ngIf="userProfile; else loginRegister">
+    <span>Welcome, {{ userProfile.name }}</span>
     <button (click)="logout()">Logout</button>
-    <div>{{authService.currentUserSign()?.username}}</div>
+  </ng-container>
+  
+  <ng-template #loginRegister>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+  </ng-template>
 </div>

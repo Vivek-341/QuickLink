@@ -15,7 +15,8 @@
     function handleCredentialResponse(response) {
       const responsePayload = decodeJWTTOken(response.credential);
       sessionStorage.setItem("loggedInUser", JSON.stringify(responsePayload));
-      window.location.href = "https://quick-link-chi.vercel.app/home";
+      // window.location.href = "https://quick-link-chi.vercel.app/home";
+      window.location.href = "http://localhost:4200/username-setup";
     }
     function handleSignOut() {
       google.accounts.id.disableAutoSelect();

@@ -1,10 +1,11 @@
-<ng-container *ngIf="userProfile">
-  <div>Username: {{ userProfile.given_name}}&nbsp;{{ userProfile.family_name }}</div>
-  <div>Email: {{ userProfile.email }}</div>
-  <img src="{{userProfile.picture}}" alt="ERROR!!!">
-  <div>Phone: {{ userProfile.phone_number || 'Not provided' }}</div>
-  <div>Locale: {{ userProfile.locale || 'Not provided' }}</div>
-  <div>Gender: {{ userProfile.gender || 'Not provided' }}</div>
-</ng-container>
-
-<button (click)="logout()">Logout</button>
+<div class="home-content">
+  <h1>Welcome to QuickLink</h1>
+  <ng-container *ngIf="userProfile">
+    <div class="profile-details">
+      <img src="{{userProfile.picture}}" alt="Profile Picture" class="profile-image">
+      <div>Phone: {{ userProfile.phone_number || 'Not provided' }}</div>
+      <div>Locale: {{ userProfile.locale || 'Not provided' }}</div>
+      <div>Gender: {{ userProfile.gender || 'Not provided' }}</div>
+    </div>
+  </ng-container>
+</div>
