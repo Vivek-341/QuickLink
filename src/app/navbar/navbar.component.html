@@ -3,11 +3,27 @@
   
   <ng-container *ngIf="userProfile; else loginRegister">
     <span>Welcome, {{ userProfile.name }}</span>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Create Room</button>
+      <div class="dropdown-content">
+        <a (click)="createPublicRoom()">Public Room</a>
+        <a (click)="createPrivateRoom()">Private Room</a>
+      </div>
+    </div>
+
+    <button (click)="toggleTheme()" class="theme-toggle">
+      <i class="material-icons">{{ (isDarkTheme$ | async) ? 'light_mode' : 'dark_mode' }}</i>
+    </button>
+
     <button (click)="logout()">Logout</button>
   </ng-container>
   
   <ng-template #loginRegister>
     <a routerLink="/login">Login</a>
     <a routerLink="/register">Register</a>
+    <button (click)="toggleTheme()" class="theme-toggle">
+      <i class="material-icons">{{ (isDarkTheme$ | async) ? 'light_mode' : 'dark_mode' }}</i>
+    </button>
   </ng-template>
 </div>

@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* Light theme variables */
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #4CAF50;
+  --secondary-color: #f1f1f1;
+  --border-color: #dddddd;
+  --navbar-bg: #f8f9fa;
+  --dropdown-bg: #ffffff;
+  --dropdown-hover: #f1f1f1;
+}
+
+.dark-theme {
+  /* Dark theme variables */
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --primary-color: #45a049;
+  --secondary-color: #2d2d2d;
+  --border-color: #404040;
+  --navbar-bg: #2d2d2d;
+  --dropdown-bg: #333333;
+  --dropdown-hover: #404040;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Update existing components to use CSS variables */
+.navbar {
+  background-color: var(--navbar-bg);
+}
+
+.dropdown-content {
+  background-color: var(--dropdown-bg);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--dropdown-hover);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  background-color: var(--secondary-color);
+}
