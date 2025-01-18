@@ -2,9 +2,9 @@
   <div>Username: {{ userProfile.given_name}}&nbsp;{{ userProfile.family_name }}</div>
   <div>Email: {{ userProfile.email }}</div>
   <img src="{{userProfile.picture}}" alt="ERROR!!!">
-  <div>User ID: {{ userProfile.sub }}</div>
-  <div>Gender: {{ userProfile.gender }}</div>
-  <div>Phone: {{ userProfile.phone_number }}</div>
+  <div>Phone: {{ userProfile.phone_number || 'Not provided' }}</div>
+  <div>Locale: {{ userProfile.locale || 'Not provided' }}</div>
+  <div>Gender: {{ userProfile.gender || 'Not provided' }}</div>
 </ng-container>
 
 <button (click)="logout()">Logout</button>

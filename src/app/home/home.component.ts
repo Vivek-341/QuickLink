@@ -13,7 +13,6 @@ declare var handleSignOut: any;
 })
 export class HomeComponent {
   userProfile: any;
-
   ngOnInit() {
     this.userProfile = JSON.parse(sessionStorage.getItem("loggedInUser")||"");
   }
